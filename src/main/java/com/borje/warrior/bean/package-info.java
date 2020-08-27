@@ -1,0 +1,1 @@
+package com.borje.warrior.bean;
