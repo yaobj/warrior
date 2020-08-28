@@ -1,4 +1,4 @@
-package com.borje.warrior.bean;
+package warrior.bean;
 
 public class HelloWorld {
 

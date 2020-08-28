@@ -7,9 +7,11 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>warrior Maven Webapp</name>
   <url>http://maven.apache.org</url>
+  
   <properties>
   	<spring.version>5.2.6.RELEASE</spring.version>
   </properties>
+  
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -17,7 +19,7 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
-    <!-- SPRING basic begin(一般不需要显式定义) -->
+    <!-- Spring 相关jar包 -->
 	<dependency>
 		<groupId>org.springframework</groupId>
 		<artifactId>spring-core</artifactId>
@@ -44,6 +46,7 @@
 		<version>${spring.version}</version>
 	</dependency>
 	
+	<!-- tomcat 服务器相关jar包 -->
 	<dependency>
 		<groupId>javax.servlet</groupId>
 		<artifactId>servlet-api</artifactId>

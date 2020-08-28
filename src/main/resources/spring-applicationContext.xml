@@ -4,6 +4,6 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 	
 	
-	<bean id = "helloWorld" class="com.borje.warrior.bean.HelloWorld"></bean>
+	<bean id = "helloWorld" class="warrior.bean.HelloWorld"></bean>
 
 </beans>

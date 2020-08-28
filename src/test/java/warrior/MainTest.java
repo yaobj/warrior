@@ -3,7 +3,7 @@ package warrior;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.borje.warrior.bean.HelloWorld;
+import warrior.bean.HelloWorld;
 
 public class MainTest {
 
