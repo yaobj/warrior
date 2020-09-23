@@ -8,6 +8,8 @@
 	<enableImports><![CDATA[false]]></enableImports>
 	<configs>
 		<config>src/main/resources/spring-applicationContext.xml</config>
+		<config>src/main/resources/spring-daoContext.xml</config>
+		<config>src/main/resources/springmvc-servlet.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
