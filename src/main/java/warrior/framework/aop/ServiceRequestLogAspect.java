@@ -1,6 +1,8 @@
 package warrior.framework.aop;
 
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.Signature;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -28,10 +30,12 @@ public class ServiceRequestLogAspect {
 
 	}
 
-	@Before(value = "printLog()")
-	public void beforeServiceRequest() {
+	@Before(value = "printLog()&& args(name)")
+	public void beforeServiceRequest(JoinPoint joinPoint, String name) {
 
-		System.out.println("服务调用开始...");
+		Signature signature = joinPoint.getSignature();
+		System.out.println("签名：" + signature.toString());
+		System.out.println("服务调用开始... name =" + name);
 	}
 
 	@After(value = "printLog()")

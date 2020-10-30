@@ -1,6 +1,9 @@
 package warrior;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import warrior.bean.HelloWorld;
 
 public class MainTest {
 
@@ -8,9 +11,9 @@ public class MainTest {
 
 	public static void main(String[] args) {
 
-		//		applicationContext = new ClassPathXmlApplicationContext("spring-applicationContext.xml");
-		//		HelloWorld helloWorld = applicationContext.getBean(HelloWorld.class);
-		//		helloWorld.hello("孙悟空");
+		applicationContext = new ClassPathXmlApplicationContext("spring-applicationContext.xml");
+		HelloWorld helloWorld = applicationContext.getBean(HelloWorld.class);
+		helloWorld.hello("孙悟空");
 		//		DataSource dataSource = new DataSource() {
 		//
 		//			public PrintWriter getLogWriter() throws SQLException {
@@ -69,8 +72,12 @@ public class MainTest {
 
 		//		};
 
-		String context = String.format("截止14点，存在【%s】笔状态为暂不打款的资金分配记录，请清算同学介入并处理", 4);
-		System.out.println(context);
+		//		String context = String.format("截止14点，存在【%s】笔状态为暂不打款的资金分配记录，请清算同学介入并处理", 4);
+		//		System.out.println(context);
+		//		BigDecimal transferAmt = new BigDecimal("194813.09");
+		//		BigDecimal factRefundAmt = transferAmt.add(transferAmt.multiply(new BigDecimal("0.05030000")).multiply(new BigDecimal(202))
+		//						.divide(new BigDecimal(360), 2, BigDecimal.ROUND_DOWN));
+		//		System.out.println(factRefundAmt);
 	}
 
 }
