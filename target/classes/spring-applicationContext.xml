@@ -18,5 +18,10 @@
 	<!-- 配置spring扫描的包，加载包下的bean -->
 	<context:component-scan base-package="warrior"></context:component-scan>
 	
+	
+	
+	<!-- 导入数据库配置 -->
+	<import resource="classpath:spring-daoContext.xml"/>
+	
 
 </beans>
