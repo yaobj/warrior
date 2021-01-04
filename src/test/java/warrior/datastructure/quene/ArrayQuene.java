@@ -1,4 +1,4 @@
-package warrior.datastructure;
+package warrior.datastructure.quene;
 
 import java.util.Arrays;
 
@@ -23,45 +23,43 @@ public class ArrayQuene {
 	// 进入队列
 	public void put(String item) {
 
-		if (tail < lenght) {
-			queue[tail] = item;
+		if (isFull()) {
+			System.out.println("队列已满");
+		} else {
+			int index = tail % lenght;
+			queue[index] = item;
 			tail++;
 			System.out.println("添加队列元素：队列头-" + head + ",队列尾-" + tail);
-		} else {
-			if (head == 0) {
-				System.out.println("队列已满");
-			} else {
-
-				int a = 0;
-				for (int i = head; i < lenght; i++) {
-					queue[a] = queue[i];
-					queue[i] = null;
-					a++;
-				}
-				tail = tail - head;
-				head = 0;
-
-				put(item);
-
-			}
-
 		}
+	}
+
+	// 判断队列是否已满
+	public boolean isFull() {
+
+		return tail != 0 && tail % lenght == head;
+	}
+
+	// 判断队列是否为空
+	public boolean isEmpty() {
+
+		return head == tail;
 	}
 
 	// 出队列
 	public String get() {
 
-		if (head < tail) {
-
-			String item = queue[head];
-			queue[head] = null;
+		if (isEmpty()) {
+			System.out.println("队列已空");
+			return "";
+		} else {
+			int index = head % lenght;
+			String item = queue[index];
+			queue[index] = null;
 			head++;
 			System.out.println("获取队列元素：队列头-" + head + ",队列尾-" + tail);
 			return item;
-		} else {
-			System.out.println("队列已空");
-			return "";
 		}
+
 	}
 
 	public String toString() {
