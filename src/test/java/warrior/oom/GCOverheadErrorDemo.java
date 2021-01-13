@@ -3,7 +3,7 @@ package warrior.oom;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GCOVerheadErrorDemo {
+public class GCOverheadErrorDemo {
 
 	public static void main(String[] args) throws Exception {
 
