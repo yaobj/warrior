@@ -63,7 +63,7 @@ public class QuickSort {
 			}
 			// 说明左边先到达中点
 			if (arr[l] == pivotVal) {
-				left++;
+				l++;
 			}
 
 		}

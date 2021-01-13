@@ -6,43 +6,7 @@ public class MainTest {
 
 	public static void main(String[] args) {
 
-		//		ArrayQuene arrayQuene = new ArrayQuene(10);
-		//
-		//		for (int i = 0; i < 11; i++) {
-		//			arrayQuene.put(i + "");
-		//			System.out.println(arrayQuene.toString());
-		//		}
-		//
-		//		for (int i = 0; i < 5; i++) {
-		//			arrayQuene.get();
-		//			System.out.println(arrayQuene.toString());
-		//		}
-		//
-		//		for (int i = 0; i < 11; i++) {
-		//			arrayQuene.put(i + "");
-		//			System.out.println(arrayQuene.toString());
-		//		}
-		//
-		//		for (int i = 0; i < 11; i++) {
-		//			arrayQuene.get();
-		//			System.out.println(arrayQuene.toString());
-		//		}
-		//
-		//		Stack<String> stack = new Stack<String>();
-		//
-		//		stack.add("a");
-		//		stack.add("b");
-		//		stack.add("c");
-		//		System.out.println(stack.pop());
-		//		System.out.println(stack.pop());
-		//		System.out.println(stack.pop());
-		int next = 0;
-		int ss = 0;
-		System.out.println(next = next++);
-		System.out.println(next);
-		System.out.println(++ss);
-		System.out.println(ss);
-
+		System.out.println(Integer.MAX_VALUE);
 	}
 
 	class ArrayList {

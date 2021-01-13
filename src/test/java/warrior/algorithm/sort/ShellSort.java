@@ -13,15 +13,15 @@ public class ShellSort {
 
 	public static void main(String[] args) {
 
-		int[] arr = new int[100000];
+		int[] arr = new int[10000000];
 
-		for (int i = 0; i < 100000; i++) {
-			arr[i] = (int) (Math.random() * 10000000);
+		for (int i = 0; i < 10000000; i++) {
+			arr[i] = (int) (Math.random() * 1000000000);
 		}
 
 		long start = System.currentTimeMillis();
 
-		sort1(arr);
+		sort2(arr);
 
 		long time = System.currentTimeMillis() - start;
 
