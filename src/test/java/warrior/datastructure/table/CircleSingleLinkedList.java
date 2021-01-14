@@ -12,26 +12,13 @@ package warrior.datastructure.table;
  */
 public class CircleSingleLinkedList<T> {
 
-	private Node first = null;
+	private Node<T> first = null;
 
-	private Node last = null;
-
-	class Node<T> {
-
-		public Node(T data) {
-
-			this.data = data;
-		}
-
-		T data;
-
-		private Node next;
-
-	}
+	private Node<T> last = null;
 
 	public void add(T data) {
 
-		Node newNode = new Node(data);
+		Node<T> newNode = new Node<T>(data);
 
 		if (first == null) {
 			first = newNode;
@@ -43,5 +30,18 @@ public class CircleSingleLinkedList<T> {
 		newNode.next = first;
 
 	}
+
+}
+
+class Node<T> {
+
+	public Node(T data) {
+
+		this.data = data;
+	}
+
+	T data;
+
+	public Node<T> next;
 
 }
