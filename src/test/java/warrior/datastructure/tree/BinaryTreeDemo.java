@@ -15,14 +15,20 @@ public class BinaryTreeDemo {
 		node3.setRight(node4);
 		binaryTree.setRoot(root);
 
+//		binaryTree.preOrder();
+//		System.out.println("****************************");
+//		binaryTree.infixOrder();
+//		System.out.println("****************************");
+//		binaryTree.postOrder();
+//		System.out.println("****************************");
+//		binaryTree.preOrderSearch("haha");
+//		binaryTree.preOrderSearch("林冲");
+		
+		binaryTree.delNode("hh");
 		binaryTree.preOrder();
-		System.out.println("****************************");
-		binaryTree.infixOrder();
-		System.out.println("****************************");
-		binaryTree.postOrder();
-		System.out.println("****************************");
-		binaryTree.preOrderSearch("haha");
-		binaryTree.preOrderSearch("林冲");
+		binaryTree.delNode("林冲");
+		binaryTree.preOrder();
+		
 
 	}
 }
@@ -105,6 +111,29 @@ class BinaryTree<T> {
 		} else {
 			System.out.println("二叉树为空～");
 		}
+	}
+	
+	
+	/**
+	 * 
+	 * 删除节点 
+	 * @param data
+	 * @author 姚斌杰 
+	 * @date 2021年1月14日 下午9:48:09
+	 */
+	public void delNode(T data) {
+		
+		if(this.root == null) {
+			System.out.println("二叉树为空~");
+		} else {
+			boolean success = this.root.delNode(data);
+			if(success) {
+				System.out.println("删除成功~");
+			} else {
+				System.out.println("删除失败~");
+			}
+		}
+		
 	}
 
 }
@@ -270,6 +299,38 @@ class Node<T> {
 
 		// 输出当前节点
 		System.out.println(this.data.toString());
+	}
+	
+	//删除节点
+	public boolean delNode(T data) {
+		
+		// 判断左节点是否删除
+		if(this.left!=null && this.left.data.equals(data)) {
+			this.left = null;
+			return true;
+		}
+		
+		// 判断右节点是否删除
+		if(this.right != null && this.right.data.equals(data)) {
+			this.right = null;
+			return true;
+		}
+		
+		// 向左递归删除
+		if(this.left !=null) {
+			if(this.left.delNode(data)) {
+				return true;
+			}
+		}
+		
+		// 向右递归删除
+		if(this.right !=null) {
+			if(this.right.delNode(data)) {
+				return true;
+			}
+		}
+		
+		return false;
 	}
 
 }
