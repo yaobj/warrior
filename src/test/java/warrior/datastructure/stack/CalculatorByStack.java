@@ -1,4 +1,4 @@
-package warrior.datastructure;
+package warrior.datastructure.stack;
 
 import java.util.ArrayList;
 import java.util.Arrays;
