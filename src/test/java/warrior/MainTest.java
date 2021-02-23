@@ -1,10 +1,33 @@
 package warrior;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class MainTest {
 
 	public static void main(String[] args) {
 
 		System.out.println(Integer.MAX_VALUE);
+
+	}
+
+	public int[] twoSum(int[] nums, int target) {
+
+		Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+		if (nums == null || nums.length < 2) {
+			return null;
+		}
+
+		for (int i = 0; i < nums.length; i++) {
+			int key = target - nums[i];
+			if (map.containsKey(key)) {
+				return new int[] { map.get(key), i };
+			}
+
+			map.put(nums[i], i);
+		}
+
+		return nums;
 
 	}
 
