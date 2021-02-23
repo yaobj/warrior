@@ -1,102 +1,71 @@
 package warrior;
 
-import java.util.Arrays;
-
 public class MainTest {
 
 	public static void main(String[] args) {
 
 		System.out.println(Integer.MAX_VALUE);
+
 	}
 
-	class ArrayList {
+	public class ListNode {
 
-		private Object[] list;
+		int val;
 
-		private int next;
+		ListNode next;
 
-		public ArrayList(int capacity) {
+		ListNode() {
 
-			list = new Object[capacity];
 		}
 
-		public ArrayList() {
+		ListNode(int val) {
 
-			list = new Object[16];
+			this.val = val;
 		}
 
-		public void add(Object o) {
+		ListNode(int val, ListNode next) {
 
-			if (next == list.length) {
-				list = Arrays.copyOf(list, list.length * 2);
-			}
-			list[next++] = o;
+			this.val = val;
+			this.next = next;
 		}
-
-		public Object get(int index) {
-
-			return list[index];
-		}
-
-		public int size() {
-
-			return next;
-		}
-
-		//		public static void main(String[] args) {
-		//
-		//			ArrayList newlist = new ArrayList();
-		//			newlist.add("adam");
-		//			newlist.add("robin");
-		//			System.out.println(newlist.get(0));
-		//			System.out.println(newlist.size());
-		//		}
 	}
 
-}
+	class Solution {
 
-class Solution {
+		public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 
-	public int waysToMakeFair(int[] nums) {
+			int a = getIntVal(l1);
 
-		int oSum = 0;
-		int jSum = 0;
-		for (int i = 0; i < nums.length; i++) {
-			if (i % 2 == 0) {
-				oSum = oSum + nums[i];
-			} else {
-				jSum = jSum + nums[i];
-			}
-		}
+			int b = getIntVal(l2);
 
-		int num = 0;
-		int jSum1 = 0;
-		int oSum1 = 0;
+			int num = a + b;
+			ListNode listNode = null;
+			char[] str = String.valueOf(num).toCharArray();
+			for (int i = str.length - 1; i > 0; i--) {
 
-		int jSum2 = 0;
-		int oSum2 = 0;
-		for (int i = 0; i < nums.length; i++) {
-
-			if (i % 2 == 0) {
-				oSum1 = oSum1 + nums[i];
-			} else {
-				jSum1 = jSum1 + nums[i];
+				if (i == str.length - 1) {
+					listNode = new ListNode(Integer.parseInt(String.valueOf(str[i])));
+				} else {
+					listNode.next = new ListNode(Integer.parseInt(String.valueOf(str[i])));
+				}
 			}
 
-			if (i % 2 == 0) {
-				oSum2 = jSum - jSum1 - nums[i];
-				jSum2 = oSum - oSum1;
-			} else {
-				oSum2 = jSum - jSum1;
-				jSum2 = oSum - oSum1 - nums[i];
-			}
-
-			if (jSum1 + jSum2 == oSum1 + oSum2) {
-				num++;
-			}
+			return listNode;
 
 		}
 
-		return num;
+		public int getIntVal(ListNode l) {
+
+			int i = 1;
+			int val = 0;
+			while (l != null) {
+				val = val + l.val * i;
+				i = i * 10;
+			}
+
+			return val;
+
+		}
 	}
+
 }
