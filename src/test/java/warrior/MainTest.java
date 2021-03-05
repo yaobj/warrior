@@ -1,94 +1,49 @@
 package warrior;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class MainTest {
 
 	public static void main(String[] args) {
 
-		System.out.println(Integer.MAX_VALUE);
+		String s = "abcdefg";
 
-	}
-
-	public int[] twoSum(int[] nums, int target) {
-
-		Map<Integer, Integer> map = new HashMap<Integer, Integer>();
-		if (nums == null || nums.length < 2) {
-			return null;
-		}
-
-		for (int i = 0; i < nums.length; i++) {
-			int key = target - nums[i];
-			if (map.containsKey(key)) {
-				return new int[] { map.get(key), i };
-			}
-
-			map.put(nums[i], i);
-		}
-
-		return nums;
-
-	}
-
-	public class ListNode {
-
-		int val;
-
-		ListNode next;
-
-		ListNode() {
-
-		}
-
-		ListNode(int val) {
-
-			this.val = val;
-		}
-
-		ListNode(int val, ListNode next) {
-
-			this.val = val;
-			this.next = next;
-		}
+		System.out.println(s.substring(s.indexOf("d") + 1));
+		System.out.println(s.substring(0, s.indexOf("d")));
 	}
 
 	class Solution {
 
-		public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+		public int lengthOfLongestSubstring(String s) {
 
-			int a = getIntVal(l1);
+			int result = 0;
+			Set<Character> set = new HashSet<Character>();
 
-			int b = getIntVal(l2);
+			char[] sss = s.toCharArray();
+			result = sss.length > 0 ? 1 : 0;
+			String sonResult = "";
+			for (char ss : sss) {
 
-			int num = a + b;
-			ListNode listNode = null;
-			char[] str = String.valueOf(num).toCharArray();
-			for (int i = str.length - 1; i > 0; i--) {
-
-				if (i == str.length - 1) {
-					listNode = new ListNode(Integer.parseInt(String.valueOf(str[i])));
-				} else {
-					listNode.next = new ListNode(Integer.parseInt(String.valueOf(str[i])));
+				if (set.contains(ss)) {
+					result = result > sonResult.length() ? result : sonResult.length();
+					clearSet(set, sonResult.substring(0, sonResult.indexOf(String.valueOf(ss)) + 1));
+					sonResult = sonResult.substring(sonResult.indexOf(String.valueOf(ss)) + 1);
 				}
+				sonResult = sonResult + String.valueOf(ss);
+				set.add(ss);
 			}
 
-			return listNode;
-
+			return result;
 		}
+	}
 
-		public int getIntVal(ListNode l) {
+	public void clearSet(Set<Character> set, String s) {
 
-			int i = 1;
-			int val = 0;
-			while (l != null) {
-				val = val + l.val * i;
-				i = i * 10;
-			}
+		char[] ss = s.toCharArray();
+		set.removeAll(Arrays.asList(ss));
 
-			return val;
-
-		}
 	}
 
 }
