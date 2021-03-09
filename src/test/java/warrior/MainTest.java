@@ -34,7 +34,7 @@ public class MainTest {
 				sonResult = sonResult + String.valueOf(ss);
 				set.add(ss);
 			}
-
+			result = result > sonResult.length() ? result : sonResult.length();
 			return result;
 		}
 	}

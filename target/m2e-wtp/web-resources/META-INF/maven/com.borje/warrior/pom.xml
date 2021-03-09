@@ -121,9 +121,8 @@
   </dependencies>
   <build>
     <finalName>warrior</finalName>
-  </build>
-  
-  <plugins>
+    
+    <plugins>
     	<plugin>
     		<groupId>org.apache.maven.plugins</groupId>
     		<artifactId>maven-compiler-plugin</artifactId>
@@ -133,5 +132,9 @@
     		</configuration>
     	</plugin>
   </plugins>
+    
+  </build>
+  
+  
 
 </project>
